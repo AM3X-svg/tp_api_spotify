@@ -1,3 +1,3 @@
-module tpspotify
+module apispotify
 
 go 1.25.0

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musique de Laylow</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Musique de Laylow</h1>
+    </header>
+
+    <main>
+        <div class="artists-container">
+            {{range .Laylow}}
+            <div class="artist-profile">
+                <a href="{{.ExternalURLs.Spotify}}" target="_blank">
+                    {{if .Images}}
+                    <img src="{{(index .Images 0).URL}}" alt="{{.Name}}" width="200">
+                    {{end}}
+                    <h3>{{.Name}}</h3>
+                </a>
+            </div>
+            {{end}}
+        </div>
+        <a href="/">Retour à l'accueil</a>
+    </main>
+</body>
+</html>

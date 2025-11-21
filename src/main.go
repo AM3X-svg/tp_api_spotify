@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"net/http"
-	initTemp "tpspotify/pages"
-	"tpspotify/router"
+	initTemp "apispotify/pages"
+	"apispotify/router"
 )
 
 func main() {
