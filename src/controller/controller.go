@@ -80,7 +80,7 @@ func GetDamsoAlbums() []Struct.Album {
 	return data.Items
 }
 
-func GetLaylowTrack() []Struct.Album {
+func GetLaylowTrack() []Struct.TrackData {
 	urlApi := "https://api.spotify.com/v1/tracks/67Pf31pl0PfjBfUmvYNDCL"
 
 	token := ReloadToken()
@@ -111,13 +111,13 @@ func GetLaylowTrack() []Struct.Album {
 		return nil
 	}
 
-	var data Struct.ApiData
-	if err := json.Unmarshal(body, &data); err != nil {
-		fmt.Println("Erreur décodage JSON :", err)
+	var track Struct.TrackData
+	if err := json.Unmarshal(body, &track); err != nil {
+		fmt.Println("Erreur décodage JSON track :", err)
 		return nil
 	}
 
-	return data.Items
+	return []Struct.TrackData{track}
 }
 
 func ReloadToken() string {

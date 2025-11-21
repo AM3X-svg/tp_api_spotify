@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
 	initTemp "apispotify/pages"
 	"apispotify/router"
+	"fmt"
+	"net/http"
 )
 
 func main() {

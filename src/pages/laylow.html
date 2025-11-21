@@ -16,15 +16,19 @@
             {{range .Laylow}}
             <div class="artist-profile">
                 <a href="{{.ExternalURLs.Spotify}}" target="_blank">
-                    {{if .Images}}
-                    <img src="{{(index .Images 0).URL}}" alt="{{.Name}}" width="200">
+                    {{if .Album.Images}}
+                    <img src="{{(index .Album.Images 0).URL}}" alt="{{.Name}}">
                     {{end}}
                     <h3>{{.Name}}</h3>
                 </a>
             </div>
             {{end}}
+
         </div>
-        <a href="/">Retour à l'accueil</a>
+
+        <div class="btnretour">
+            <a href="/">Retour à l'accueil</a>
+        </div>
     </main>
 </body>
 </html>

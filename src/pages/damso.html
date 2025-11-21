@@ -12,19 +12,24 @@
     </header>
 
     <main>
-        <div class="artists-container">
+        <div class="artists-container album-container">
             {{range .Damso}}
-            <div class="artist-profile">
-                <a href="{{.ExternalURLs.Spotify}}" target="_blank">
-                    {{if .Images}}
-                    <img src="{{(index .Images 0).URL}}" alt="{{.Name}}" width="200">
-                    {{end}}
+            <div class="album-box">
+                {{if .Images}}
+                <img src="{{(index .Images 0).URL}}" alt="{{.Name}}">
+                {{end}}
+                <div class="album-info">
                     <h3>{{.Name}}</h3>
-                </a>
+                    <p>{{.ReleaseDate}}</p>
+                    <a class="btn" href="{{.ExternalURLs.Spotify}}" target="_blank">Écouter</a>
+                </div>
             </div>
             {{end}}
         </div>
-        <a href="/">Retour à l'accueil</a>
+
+        <div class="btnretour">
+            <a href="/">Retour à l'accueil</a>
+        </div>
     </main>
 </body>
 </html>
